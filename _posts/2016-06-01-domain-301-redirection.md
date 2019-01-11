@@ -2,10 +2,9 @@
 title: 301 redirection
 tags:
   - Nginx
-date: 2016-06-01 11:25:31
-permalink: domain-301-redirection
 ---
-
+<!--more-->
+```
     server {
             server_name mysite.com;
             return 301 $scheme://www.mysite.com$request_uri;
@@ -27,3 +26,4 @@ permalink: domain-301-redirection
                     include fastcgi_params;
             }
     }
+```
