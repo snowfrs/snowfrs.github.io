@@ -206,3 +206,4 @@ endfunc
 * 用 Vim 打造 IDE 环境：<https://harttle.land/2015/11/04/vim-ide.html>
 
 [cursor]: /2015/11/07/vim-cursor.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

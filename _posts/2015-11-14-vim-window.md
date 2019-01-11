@@ -94,3 +94,4 @@ Ctrl+w =        统一窗口高度
 [vim-tabpage]: /2015/11/12/vim-tabpage.html
 [vim-window]: /assets/img/blog/vim-window@2x.png
 [vim-window-doc]: http://vimdoc.sourceforge.net/htmldoc/windows.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

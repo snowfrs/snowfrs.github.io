@@ -138,3 +138,4 @@ Excel 等软件经常用 CR（`^M`, `\r`）来换行，怎么把 `\r`换成 `\n`
 * Vim Tips Wiki：<http://vim.wikia.com/wiki/Entering_special_characters>
 
 [search]: /2016/08/08/vim-search-in-file.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

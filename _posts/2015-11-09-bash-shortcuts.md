@@ -88,3 +88,4 @@ tags: Bash GNU Linux 快捷键
 
 [bash]: http://www.gnu.org/software/bash/
 [readline]: http://tiswww.case.edu/php/chet/readline/rltop.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

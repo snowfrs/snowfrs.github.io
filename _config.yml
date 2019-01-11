@@ -1,12 +1,10 @@
-title: Harttle Land
-description: 分享技术，共建开放平台
-url: https://harttle.land
-author: Harttle
-email: harttle@harttle.com
+title: 寒风凛冽
+description: 个人博客
+url: https://snowfrs.com
+author: snowfrs
+email: snowfrs@gmail.com
 logo: assets/img/favicon.png
 keywords: 
-  - Web
-  - C++
   - Linux
   - Vim
 
@@ -23,7 +21,7 @@ kramdown:
   input: GFM
   hard_wrap: false
 
-ga: 'UA-65795020-1'
+ga: ''
 
 sass:
     style: compressed

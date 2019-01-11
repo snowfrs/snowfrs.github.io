@@ -260,3 +260,4 @@ tags: IP LAN MAC TCP UDP WAN 网络 路由
 * 对于许多千兆位应用，分组到达时间的偏差与平均延迟本身一样重要
 
 
+转载自 <a href="https://harttle.land">Harttle.Land</a>

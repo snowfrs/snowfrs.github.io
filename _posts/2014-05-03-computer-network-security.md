@@ -289,3 +289,4 @@ DoS（denial of service）攻击：向目标机器发送大量合法的分组，
 * 版权（copyright）是对IP（intellectual property，知识产权）的创造者的一种授权
 * 合理使用原则（fair use doctrine）
 * TCPA（trusted computing platform alliance，可信计算平台联盟）
+转载自 <a href="https://harttle.land">Harttle.Land</a>

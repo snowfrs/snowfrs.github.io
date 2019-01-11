@@ -102,3 +102,4 @@ Harttle发现Vim不仅可以打开文件，而且可以打开目录。
 * <http://vim.wikia.com/wiki/File_explorer>
 
 [nerdtree]: https://github.com/scrooloose/nerdtree
+转载自 <a href="https://harttle.land">Harttle.Land</a>

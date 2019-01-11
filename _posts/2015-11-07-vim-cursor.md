@@ -71,3 +71,5 @@ Vim最大的特征与最大的困难就是纯键盘操作，所以快速移动�
 [vim-config]: /2013/11/08/vim-config.html
 [vim-ide]: /2015/11/04/vim-ide.html
 [vim-files]: /2015/11/12/vim-tabpage.html
+
+转载自 <a href="https://harttle.land">Harttle.Land</a>

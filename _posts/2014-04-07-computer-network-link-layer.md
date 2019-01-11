@@ -94,3 +94,4 @@ tags: IP TCP 网络 路由 检错码 纠错码 滑动窗口
 * PPP帧格式与HDLC非常相似
 
 
+转载自 <a href="https://harttle.land">Harttle.Land</a>

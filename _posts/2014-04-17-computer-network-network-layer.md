@@ -272,3 +272,4 @@ OSPF采纳了IS-IS，但IS-IS编码方法支持携带多个网络层协议的信
 * 扩展头部：为兼容IPv4，跟在固定头部的后面（可以有多个）
 * 16字节固定长度编址
 
+转载自 <a href="https://harttle.land">Harttle.Land</a>

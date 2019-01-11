@@ -137,3 +137,4 @@ git rm --cached config.yml
 > `git rm`和bash `rm`的参数类似，基本可通用。
 
 [purge-git-history]: /2016/03/22/purge-large-files-in-gitrepo.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

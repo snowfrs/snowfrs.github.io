@@ -1,7 +1,7 @@
 {
-  "name": "harttle.land",
+  "name": "snowfrs",
   "version": "1.0.0",
-  "description": "source code for https://harttle.land",
+  "description": "source code for https://snowfrs.com",
   "devDependencies": {
     "eslint": "^4.2.0",
     "eslint-config-standard": "^10.2.1",
@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harttle/harttle.github.io.git"
+    "url": "git+https://github.com/snowfrs/snowfrs.github.io.git"
   },
-  "author": "harttle <harttle@harttle.com>",
+  "author": "snowfrs <snowfrs@gmail.com>",
   "license": "CC-BY 4.0",
   "bugs": {
-    "url": "https://github.com/harttle/harttle.github.io/issues"
+    "url": "https://github.com/snowfrs/snowfrs.github.io/issues"
   },
-  "homepage": "https://github.com/harttle/harttle.github.io#readme"
+  "homepage": "https://github.com/snowfrs/snowfrs.github.io#readme"
 }

@@ -125,3 +125,4 @@ void rand-quicksort(vector<int>& v, int begin, int end){
 
 [qsort]: https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F
 [intro2algo]: /2015/11/16/algo-sorting.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

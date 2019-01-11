@@ -1,2 +1,2 @@
-Sitemap: https://harttle.land/sitemap.xml
+Sitemap: https://snowfrs.com/sitemap.xml
 User-agent: *

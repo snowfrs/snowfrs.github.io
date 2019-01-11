@@ -229,3 +229,5 @@ bind '%' split-window -h -c '#{pane_current_path}'
 [reattach]: https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 [shell]: /2016/06/08/shell-config-files.html
 [tmux]: https://wiki.archlinux.org/index.php/tmux
+
+转载自 <a href="https://harttle.land">Harttle.Land</a>

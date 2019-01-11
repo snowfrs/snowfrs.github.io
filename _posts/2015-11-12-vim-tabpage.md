@@ -76,3 +76,4 @@ noremap <C-H> <Esc>:tabprevious<CR>
 [vim-tab]: http://vim.wikia.com/wiki/Using_tab_pages
 [vim-window]: /2015/11/14/vim-window.html
 [vim-buffer]: /2015/11/17/vim-buffer.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

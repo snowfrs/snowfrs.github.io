@@ -123,3 +123,4 @@ Vim 作为文本编辑器，有[缓冲区][vim-buffer]作用域、[窗口][vim-w
 [vim-window]: /2015/11/14/vim-window.html
 [vim-buffer]: /2015/11/17/vim-buffer.html
 [vim-tab]: /2015/11/12/vim-tabpage.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

@@ -110,3 +110,4 @@ set clipboard=unnamed
 [vim-tmux-focus-events]: https://github.com/tmux-plugins/vim-tmux-focus-events
 [vim-tmux-clipboard]: https://github.com/roxma/vim-tmux-clipboard
 [vundle]: https://github.com/VundleVim/Vundle.vim
+转载自 <a href="https://harttle.land">Harttle.Land</a>

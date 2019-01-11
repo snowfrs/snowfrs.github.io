@@ -229,3 +229,4 @@ endfunction
 
 [vim-basic]: /2013/11/08/vim-config.html
 [vim-cursor]: /2015/11/07/vim-cursor.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

@@ -74,3 +74,4 @@ set -g @resurrect-processes 'ssh mysql redis-server npm'
 [tmux]: https://wiki.archlinux.org/index.php/tmux
 [the-hard-way]: /2016/09/23/tmux-workspace-setup.html
 [restore-doc]: https://github.com/tmux-plugins/tmux-resurrect/blob/master/docs/restoring_programs.md
+转载自 <a href="https://harttle.land">Harttle.Land</a>

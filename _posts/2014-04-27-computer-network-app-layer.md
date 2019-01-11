@@ -225,3 +225,4 @@ tags: DNS Web POP3 RAID SMTP UDP XML 网络 IMAP
 * PIM（protocol independent multicast，协议无关多播）：AS间的路由，IETF工作组开发
 
 
+转载自 <a href="https://harttle.land">Harttle.Land</a>

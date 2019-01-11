@@ -87,3 +87,4 @@ pdflatex    *.pdf
 [2]: /assets/img/blog/gnuplot/line-point.png
 [gnuplot]: http://www.gnuplot.info/
 
+转载自 <a href="https://harttle.land">Harttle.Land</a>

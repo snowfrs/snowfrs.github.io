@@ -138,3 +138,4 @@ send-keys -t servers.0 redis-server Enter
 [tmux-startup]: /2015/11/06/tmux-startup.html
 [bash]: /2015/11/09/bash-shortcuts.html
 [tmux-workspace]: /2017/11/24/tmux-workspace-plugin.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

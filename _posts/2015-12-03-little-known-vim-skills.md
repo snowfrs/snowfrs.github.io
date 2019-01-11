@@ -127,3 +127,4 @@ nnoremap yp :let @p=expand("%:p")<CR>
 当模式包含大写字母时忽略`ignorecase`设置。
 
 [vim-cursor]: /2015/11/07/vim-cursor.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

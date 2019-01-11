@@ -167,3 +167,4 @@ inoremap <C-r>+ <C-g>u<C-\><C-o>"+gP
 [vim-ide]: /2015/11/04/vim-ide.html
 [vim-window]: /2015/11/14/vim-window.html
 [vim-buffer]: /2015/11/17/vim-buffer.md
+转载自 <a href="https://harttle.land">Harttle.Land</a>

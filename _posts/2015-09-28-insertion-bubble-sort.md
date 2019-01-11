@@ -98,3 +98,4 @@ void bubble_sort(vector<int> v){
 [qsort]: https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F
 [my-qsort]: /2015/09/27/quick-sort.html
 [intro2algo]: /2015/11/16/algo-sorting.html
+转载自 <a href="https://harttle.land">Harttle.Land</a>

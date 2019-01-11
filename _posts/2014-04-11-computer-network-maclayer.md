@@ -145,3 +145,4 @@ tags: IP LAN MAC WAN 蓝牙 路由 多路复用
 - 每个3层协议或IP分配一个VLAN颜色：须检查净荷域
 + IEEE 802.1Q：改变以太网的帧头、可理解VLAN的交换机
 
+转载自 <a href="https://harttle.land">Harttle.Land</a>

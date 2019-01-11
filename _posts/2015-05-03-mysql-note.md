@@ -135,3 +135,5 @@ mysqldump [-h localhost] -u root -p dbname tablename > /path/to/tablename.sql
 mysqldump [-h localhost] -u root -p dbname --add-drop-table > /path/to/dbname_struct.sql
 ```
 
+
+转载自 <a href="https://harttle.land">Harttle.Land</a>

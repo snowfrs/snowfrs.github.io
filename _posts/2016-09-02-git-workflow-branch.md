@@ -205,3 +205,4 @@ git reset --hard origin/master
 [log-fs]: /2014/01/03/morden-os-fs.html
 [purge-in-git]: /2016/03/22/purge-large-files-in-gitrepo.html
 [ricky]: http://www.tianmaying.com/user/luoruici
+转载自 <a href="https://harttle.land">Harttle.Land</a>

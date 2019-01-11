@@ -115,3 +115,4 @@ noremap <c-n> :b <c-z>
 [vim-buffer]: http://vim.wikia.com/wiki/Buffers
 [vim-cursor]: /2015/11/07/vim-cursor.html
 [twb]: /assets/img/blog/tabs-windows-buffers.png
+转载自 <a href="https://harttle.land">Harttle.Land</a>
