@@ -1,8 +1,6 @@
 ---
 title: 给新手的 Arch Linux 桌面安装指南
-date: 2017-01-01T16:45:59.000Z
-permalink: archlinux-for-new-user.html
-tags: linux
+tags: arch linux
 ---
 
 适合有经验的新手(逃)
@@ -10,17 +8,23 @@ tags: linux
 <!--more-->
 
 1. 验证boot模式
-   `ls /sys/firmware/efi/efivars`
+```
+`ls /sys/firmware/efi/efivars`
+```
    如果存在目录，说明UEFI模式启动; 如果不存在，应该时BIOS启动
 
-
 2. 测试网络
-   `ping -c 3 www.archlinux.org`
+```
+`ping -c 3 www.archlinux.org`
+```
 
 3. 设置NTP
-   `timedatectl set-ntp true`
+```
+`timedatectl set-ntp true`
+```
 
 4. 磁盘分区并格式化
+```
    lsblk 查看磁盘 fdisk 分区
    sda1   EFI分区
    sda2    根分区
@@ -30,31 +34,39 @@ tags: linux
    mkfs.ext4   /dev/sda2
    mkfs.ext4    /dev/sda3
    mkswap      /dev/sda4
-
+```
 5. 挂载
+```
    `mount /dev/sda2 /mnt`
    `mount /dev/sda3 /mnt/home`
    `mount /dev/sda1 /mnt/boot/efi`
-
+```
 6. 安装基本包
    先安装vim 
-   `pacstrap /mnt vim`
-   编辑/etc/pacman.d/mirrorlist 修改源为TUNA或者USTC
-
-   `pacstrap  -i	/mnt	base base-devel`
+```
+`pacstrap /mnt vim`
+```
+编辑/etc/pacman.d/mirrorlist 修改源为TUNA或者USTC
+```
+`pacstrap  -i	/mnt	base base-devel`
+```
 
 7. 生成fstab
-   `genfstab -U /mnt   >>    /mnt/etc/fstab`
-   编辑/mnt/etc/fstab 加入home和swap分区的UUID
+```
+`genfstab -U /mnt   >>    /mnt/etc/fstab`
+```
+编辑/mnt/etc/fstab 加入home和swap分区的UUID
 
 8. chroot
-   `arch-chroot  /mnt`
-   修改root密码
-   passwd root
-   添加新用户/修改用户密码/添加到sudo user
-   useradd -m -s /bin/bash snowfrs
-   passwd snowfrs
-   使用命令visudo添加新用户
+```
+`arch-chroot  /mnt`
+```
+修改root密码
+passwd root
+添加新用户/修改用户密码/添加到sudo user
+useradd -m -s /bin/bash snowfrs
+passwd snowfrs
+使用命令visudo添加新用户
 
 9. 时区
    `ln -sf /usr/share/zoneinfo/Asia/Taipei   /etc/localtime`
