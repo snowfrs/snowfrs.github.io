@@ -1,9 +1,10 @@
 ---
 title: "Yubikey OpenPGP Card 略高级折腾手记"
 date: 2018-01-20
+tags: yubikey pgp ssh
 ---
 <!--more-->
-本文转载自[scateu][http://scateu.me/2018/01/20/gpg-yubikey-advanced-usage.html]
+本文转载自[scateu](http://scateu.me/2018/01/20/gpg-yubikey-advanced-usage.html)
 
 由于Yubikey 4部分版本里使用了Infineon生产的Secure Element，有[安全漏洞](https://www.yubico.com/support/security-advisories/ysa-2017-01/)。漏洞细节见[ROCA: Vulnerable RSA generation (CVE-2017-15361)](https://crocs.fi.muni.cz/public/papers/rsa_ccs17)。
 
