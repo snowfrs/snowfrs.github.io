@@ -1,5 +1,5 @@
 language: ruby
 install:
     - bundle install
-    - nmp install
+    - npm install
 script: bundle exec rake deploy
