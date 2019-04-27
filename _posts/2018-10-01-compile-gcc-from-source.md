@@ -1,3 +1,9 @@
+---
+title: compile gcc from source
+tags:
+  - gcc
+---
+
 <!--more-->
 # 源码编译gcc 7.3
 
