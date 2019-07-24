@@ -52,30 +52,26 @@ rule
 
 接受所有192.168.1.0/24端口范围7900-7905的TCP流量
 ```
-firewall-cmd --permanent --zone=public --ad-rich-rule="rule family=ipv4 source
-address=192.168.1.0/24 port port=7900-7905 protocol=tcp accept"
+firewall-cmd --permanent --zone=public --add-rich-rule="rule family=ipv4 source address=192.168.1.0/24 port port=7900-7905 protocol=tcp accept"
 ```
 伪造NAT
 ```
 firewall-cmd --permanent --zone=<ZONE> --add-masquerade
-firewall-cmd --permanent --zone=<ZONE> --add-rich-rule='rule family=ipv4 source
-address=192.168.0.0/24 masquerade'
+firewall-cmd --permanent --zone=<ZONE> --add-rich-rule='rule family=ipv4 source address=192.168.0.0/24 masquerade'
 ```
 记录日志
 
 将来自192.168.1.0/24的ssh流量记录到日志，每分钟最多写50条日志记录，log level
 为info或更高级别的才写入日志
 ```
-firewall-cmd --permanent --zone=<ZONE> --add-rich-rule='rule family=ipv4 source
-address=192.168.1.0/24 service name =ssh log prefix=ssh level=info limit value=50/m accept'
+firewall-cmd --permanent --zone=<ZONE> --add-rich-rule='rule family=ipv4 source address=192.168.1.0/24 service name =ssh log prefix=ssh level=info limit value=50/m accept'
 ```
 ## 高级用法
 目标：将来自 114.114.0.0/16 的流量ban掉
 
 初始操作
 ```
-firewall-cmd --permanent --new-ipset=networkblock --type=hash:net --option=maxelem=10000000
---option=family=inet --option=hashsize=4096
+firewall-cmd --permanent --new-ipset=networkblock --type=hash:net --option=maxelem=10000000 --option=family=inet --option=hashsize=4096
 firewall-cmd --permanent --zone=drop --add-source=ipset:networkblock
 firewall-cmd --reload
 ```
