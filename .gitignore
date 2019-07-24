@@ -10,5 +10,4 @@ Gemfile.lock
 dump.rdb
 .sass-cache
 .jekyll-metadata
-_drafts/
 vendor/
