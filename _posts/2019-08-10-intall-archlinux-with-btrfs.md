@@ -2,6 +2,7 @@
 title: 使用 btrfs 文件系統安裝 archlinux
 tags: btrfs archlinux
 ---
+
 距离上次 [安装archlinux][install-arch] 已经过去很久。最近想尝试下btrfs，于是有了这篇。
 
 <!--more-->
