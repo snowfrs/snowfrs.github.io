@@ -28,24 +28,22 @@ mount -o compress=lzo /dev/nvme0n1p4 /mnt
 ```
 创建subvolume
 ```
-cd /mnt
-btrfs subvolume create @
-btrfs subvolume create @home
+btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/@home
 ```
 我这里创建了两个subvolume @ 和 @home，你可以根据自己意愿创建更多。
 
 挂载subvolume
 ```
-cd /
 umount /mnt
 mount -o compress=lzo,subvol=@ /dev/nvme0n1p4 /mnt
-cd /mnt
-mkdir -p {home,/boot/efi}
-mount -o compress=lzo,subvol=@home /dev/nvme0n1p4 home
+mkdir -p /mnt/boot/efi
+mkdir -p /mnt/home
+mount -o compress=lzo,subvol=@home /dev/nvme0n1p4 /mnt/home
 ```
 此时不要忘记将efi分区挂载上
 ```
-mount /dev/nvme0n1p1 boot/efi
+mount /dev/nvme0n1p1 /mnt/boot/efi
 ```
 
 ## 安装 base system
@@ -88,7 +86,7 @@ mkinitcpio -p linux
 ## 用户，密码，引导项，DM, WM
 ```
 passwd root
-useradd -m -u UID -s /bin/bash USERNAME
+useradd -m -u UID -G wheel -s /bin/bash USERNAME
 passwd USERNAME
 
 pacman -S grub os-prober efibootmgr
