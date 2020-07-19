@@ -14,32 +14,58 @@ tags: btrfs archlinux
 我的磁盘分区是这样的
 
 - /dev/nvme0n1p1	EFI分区
-- /dev/nvme0n1p4	btrfs分区，用来安装新的系统
+- /dev/nvme0n1p3	btrfs分区，用来安装新的系统
 
 EFI分区已经有数据，不再格式化。
 
 格式化
 ```
-mkfs.btrfs -m single -L arch /dev/nvme0n1p4
+mkfs.btrfs -m single -L arch /dev/nvme0n1p3
 ```
 挂载
 ```
-mount -o compress=lzo /dev/nvme0n1p4 /mnt
+mount -o compress=lzo /dev/nvme0n1p3 /mnt
 ```
 创建subvolume
 ```
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
+btrfs subvolume create /mnt/@logs
+btrfs subvolume create /mnt/@tmp
+btrfs subvolume create /mnt/@docker
+btrfs subvolume create /mnt/@pkgs
+btrfs subvolume create /mnt/@snapshots
+btrfs subvolume create /mnt/@build
 ```
-我这里创建了两个subvolume @ 和 @home，你可以根据自己意愿创建更多。
+subvolume @ 用来做新系统的根(/)
+
+layout
+
+```
+ID 256 gen 405 parent 5 top level 5 path @
+ID 257 gen 409 parent 5 top level 5 path @home
+ID 258 gen 409 parent 5 top level 5 path @logs
+ID 259 gen 404 parent 5 top level 5 path @tmp
+ID 260 gen 257 parent 5 top level 5 path @docker
+ID 261 gen 310 parent 5 top level 5 path @pkgs
+ID 262 gen 288 parent 5 top level 5 path @snapshots
+ID 263 gen 20 parent 5 top level 5 path @build
+```
 
 挂载subvolume
 ```
 umount /mnt
-mount -o compress=lzo,subvol=@ /dev/nvme0n1p4 /mnt
-mkdir -p /mnt/boot/efi
-mkdir -p /mnt/home
-mount -o compress=lzo,subvol=@home /dev/nvme0n1p4 /mnt/home
+mount -o noatime,nodiratime,compress=lzo,subvol=@ /dev/nvme0n1p3 /mnt
+mkdir -p /mnt/{btrfs-root,boot/efi,home,var/{log,lib/{docker,build},cache/pacman},tmp,.snapshots}
+mount -o noatime,nodiratime,compress=lzo,subvol=@home /dev/nvme0n1p3 /mnt/home
+mount -o noatime,nodiratime,compress=lzo,subvol=@logs /dev/nvme0n1p3 /mnt/var/log
+mount -o noatime,nodiratime,compress=lzo,subvol=@tmp /dev/nvme0n1p3 /mnt/tmp
+mount -o noatime,nodiratime,compress=lzo,subvol=@docker /dev/nvme0n1p3 /mnt/var/lib/docker
+mount -o noatime,nodiratime,compress=lzo,subvol=@pkgs /dev/nvme0n1p3 /mnt/var/cache/pacman
+mount -o noatime,nodiratime,compress=lzo,subvol=@snapshots /dev/nvme0n1p3 /mnt/.snapshots
+mount -o noatime,nodiratime,compress=lzo,subvol=@build /dev/nvme0n1p3 /mnt/var/lib/build
+
+mount -o noatime,nodiratime,compress=lzo,subvol=/ /dev/nvme0n1p3 /mnt/btrfs-root
 ```
 此时不要忘记将efi分区挂载上
 ```
@@ -137,4 +163,21 @@ ls
 btrfs subvolume delete @home
 # 删除subvolume之后记得修改对应的/etc/fstab
 ```
+最终mount 效果
+
+```
+/dev/nvme0n1p3 on / type btrfs (rw,noatime,nodiratime,compress=lzo,ssd,space_cache,subvolid=256,subvol=/@) [btrfs-arch]
+/dev/nvme0n1p3 on /tmp type btrfs (rw,noatime,nodiratime,compress=lzo,ssd,space_cache,subvolid=259,subvol=/@tmp) [btrfs-arch]
+/dev/nvme0n1p3 on /var/lib/build type btrfs (rw,noatime,nodiratime,compress=lzo,ssd,space_cache,subvolid=263,subvol=/@build) [btrfs-arch]
+/dev/nvme0n1p3 on /var/lib/docker type btrfs (rw,noatime,nodiratime,compress=lzo,ssd,space_cache,subvolid=260,subvol=/@docker) [btrfs-arch]
+/dev/nvme0n1p3 on /home type btrfs (rw,noatime,nodiratime,compress=lzo,ssd,space_cache,subvolid=257,subvol=/@home) [btrfs-arch]
+/dev/nvme0n1p3 on /.snapshots type btrfs (rw,noatime,nodiratime,compress=lzo,ssd,space_cache,subvolid=262,subvol=/@snapshots) [btrfs-arch]
+/dev/nvme0n1p3 on /var/log type btrfs (rw,noatime,compress=lzo,ssd,space_cache,subvolid=258,subvol=/@logs) [btrfs-arch]
+/dev/nvme0n1p3 on /var/cache/pacman type btrfs (rw,noatime,nodiratime,compress=lzo,ssd,space_cache,subvolid=261,subvol=/@pkgs) [btrfs-arch]
+
+/dev/nvme0n1p3 on /btrfs-root type btrfs (rw,noatime,nodiratime,compress=lzo,ssd,space_cache,subvolid=5,subvol=/) [btrfs-arch]
+```
+
+
+
 [install-arch]: https://snowfrs.com/2017/01/01/archlinux-for-new-user.html
