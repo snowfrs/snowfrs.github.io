@@ -20,7 +20,7 @@ EFI分区已经有数据，不再格式化。
 
 格式化
 ```
-mkfs.btrfs -m single -L arch /dev/nvme0n1p3
+mkfs.btrfs -m single -L btrfs-arch /dev/nvme0n1p3
 ```
 挂载
 ```
