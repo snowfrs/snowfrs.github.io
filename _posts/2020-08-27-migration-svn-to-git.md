@@ -159,7 +159,7 @@ git push --tags
 
 [migrating-to-git]: https://www.atlassian.com/git/tutorials/migrating-overview
 [migrating-to-gitlab]: https://docs.gitlab.com/ee/user/project/import/svn.html
-[ subgit-link ]: https://subgit.com/
+[subgit-link]: https://subgit.com/
 
 
 
