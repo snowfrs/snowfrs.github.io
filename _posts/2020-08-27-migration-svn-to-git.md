@@ -148,7 +148,7 @@ git remote set-url origin git@your.server.tld:username/projectname.git
 #master
 git push origin master
 #分支
-for branch in `git branch -r | grep -Ev "HEAD|master" | cut -d/ -f2`; do git push origin remotes/origin/$branch:refs/heads/$branch; done  # 冒号后面为远程仓库中的地址,必须以refs/heads开头
+for branch in `git branch -r | grep -Ev "HEAD|master" | cut -d/ -f2`; do git push origin remotes/origin/$branch\:refs/heads/$branch; done  # 冒号后面为远程仓库中的地址,必须以refs/heads开头
 #tags
 git push --tags
 ```
