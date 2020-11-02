@@ -4,6 +4,7 @@ tags: influxdb time-series database
 ---
 
 [InfluxDB](https://www.influxdata.com/) is a time-series database for storing events and statistics.
+<!--more-->
 
 # 安装
 ## 配置安装源
