@@ -2,7 +2,7 @@
 title: Slurm Introduce
 tags: slurm
 ---
-[Slurm](slurm) is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
+[Slurm][slurm] is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
 <!--more-->
 
 # 准备工作
@@ -21,7 +21,7 @@ tags: slurm
 ```
 ## 配置NTP
 ```bash
- yum isntall ntp chrony -y
+ yum install ntp chrony -y
 #修改文件 /etc/chrony.conf
 server ntp-server-1 iburst
 #启动服务
@@ -38,7 +38,7 @@ Slurm Cluster 中所有服务需要保持uid和gid一致.
 1. Cluster中所有服务器创建本地user/group 保持uid和gid一致
 2. Cluster中所有服务器从中央认证服务器LDAP获取用户id信息
    
- 推荐使用[389ds](389ds)作为LDAP认证服务器.
+ 推荐使用[389ds][389ds]作为LDAP认证服务器.
  
  389ds及sssd相关配置这里不作讨论.
 
@@ -166,7 +166,7 @@ systemctl enable --now slurmdbd
 
     slurmd -C
 
-官方slrum[配置生成器](configurator)
+官方slrum[配置生成器][configurator]
 
 一份`slurm.conf`配置文件如下(参考):
 ```txt
@@ -287,10 +287,22 @@ systemctl enable --now slurmctld.service
 systemctl enable --now slurmd.service
 ```
 
+# Slurm 测试指令
+```bash
+# 显示所有compute nodes
+scontrol show nodes
+# 更新 state
+scontrol update nodename=node1 state=resume
+# 测试执行
+srun -N2 hostname
+# 显示作业
+scontrol show jobs
+# 使用脚本
+sbatch -n16 script-file
+```
 
+[389ds]: https://www.port389.org/
 
-[389ds](https://www.port389.org/)
+[slurm]: https://slurm.schedmd.com/
 
-[slurm](https://slurm.schedmd.com/)
-
-[configurator](https://slurm.schedmd.com/configurator.html)
+[configurator]: https://slurm.schedmd.com/configurator.html
