@@ -155,6 +155,7 @@ chown slurm: /var/log/slurmdbd.log
 ## 测试运行 slurmdbd
     
     slurmdbd -D -vvv
+
 ```bash
 # on master head node
 systemctl enable --now slurmdbd
