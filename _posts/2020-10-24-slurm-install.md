@@ -302,6 +302,9 @@ scontrol show jobs
 sbatch -n16 script-file
 ```
 
+相关链接:
+https://wiki.fysik.dtu.dk/niflheim/Slurm_installation
+
 [389ds]: https://www.port389.org/
 
 [slurm]: https://slurm.schedmd.com/
