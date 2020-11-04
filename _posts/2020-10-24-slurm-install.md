@@ -303,7 +303,11 @@ sbatch -n16 script-file
 ```
 
 相关链接:
-https://wiki.fysik.dtu.dk/niflheim/Slurm_installation
+
+- https://wiki.fysik.dtu.dk/niflheim/Slurm_installation
+
+- https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html
+-  http://www.top500.org/  (Top500 supercomputers)
 
 [389ds]: https://www.port389.org/
 
