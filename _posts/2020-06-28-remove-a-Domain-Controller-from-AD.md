@@ -10,15 +10,15 @@ If the DC which you want to demote holds any FSMO role, you need to transfer the
 
 The 5 FSMO roles are:
 
-**Schema Master** (forest-wide)
++ **Schema Master** (forest-wide)
 
-**Domain Naming Master** (forest-wide)
++ **Domain Naming Master** (forest-wide)
 
-**RID Master** (domain-specific)
++ **RID Master** (domain-specific)
 
-**PDC Emulator** (domain-specific)
++ **PDC Emulator** (domain-specific)
 
-**Infrastructure Master** (Domain-specific)
++ **Infrastructure Master** (Domain-specific)
 
 
 Login as **Domain Administrator** on one DC

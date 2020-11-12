@@ -1,13 +1,13 @@
 ---
 title: 计算机启动过程介绍
-tags: []
+tags: PXE Boot
 date: 2012-10-02 11:48:30
 permalink: computer-boot
 ---
 
 本文介绍从按下电源按钮到系统弹出登录界面, 计算机发生了什么.
-
 <!--more-->
+
 ```
 1. BIOS
 
@@ -27,6 +27,7 @@ permalink: computer-boot
 
 9. /bin/login
 ```
+
 ![pxe-boot-flow](/assets/img/blog/pxe-boot-flow.png)
 
 当我们按下电源按钮时, 电源就开始向主板和其他设备供电, 此时电压不太稳定, 主板控制芯片组会向CPU发出并保持一个RESET信号, 让CPU内部自动恢复到初始状态. 当主板控制芯片组检测到电源稳定供电时, 它就撤去RESET信号, CPU就马上开始执行指令, 此指令地址一般为系统BIOS地址范围, 将控制权交给BIOS. 

@@ -6,6 +6,7 @@ date: 2016-01-17 17:08:24
 permalink: syslink-to-bootmgr
 ---
 <!--more-->
+
 使用syslinux多启动时, 添加WIN7后竟然转到grub4dos 提示命令行输入.
 
 于是:

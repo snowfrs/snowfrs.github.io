@@ -25,7 +25,8 @@ permalink: router-switch-notes
 568A：将1、3和2、6线序对调即可
 
 RJ-45接头的8个接脚的识别方法，铜接点朝自己，头朝右，从上往下数，分别是1、2、3、4、5、6、7、8.
-```
+
+```txt
 1.       输出数据(+)
 
 2.       输出数据(-)
@@ -83,8 +84,8 @@ OSI：开放式通信系统互联参考模型  Open System Interconnection Refer
 
 IOS：互联网操作系统  Internet work Operating System
 
-OSI七层参考模型：
-```
+**OSI七层参考模型**：
+```txt
 1.       物理层                                比特流     电信号
 
 2.       数据链路层                             MAC地址
@@ -100,8 +101,8 @@ OSI七层参考模型：
 7.       应用层
 ```
 
-TCP/IP模型：
-```
+**TCP/IP模型**：
+```txt
 网络接口层：                                   对应OSI 物理层+数据链路层
 
 网络层：                                      对应OSI网络层
@@ -110,6 +111,28 @@ TCP/IP模型：
 
 应用层：                                      对应OSI会话层+表示层+应用层
 ```
+
+**安全服务**
+```txt
+鉴别服务
+访问控制
+数据完整性
+数据保密性
+不可抵赖性
+```
+
+**安全机制**
+```txt
+加密
+数字签名
+访问控制
+数据完整性
+鉴别交换
+业务流填充
+路由控制
+公正
+```
+
 常用知名端口：(C:\Windows\System32\drivers\etc\services)
 
 FTP: 20 21
@@ -224,23 +247,17 @@ DHCP服务器分发不同网段的地址，通过中继设备进行定向转发�
 
 路由器默认情况下不支持转发广播数据包，将广播转换成单播
 
-Router(config-if)#ip help-address ####  将广播数据包转换成单播给####
+`Router(config-if)#ip help-address`  ####  将广播数据包转换成单播给####
 
 配置：
-
-​         #ip dhcp pool name
-
-​         #network 192.168.1.0   /24
-
-​         #default-router  ?                       网关
-
-​         #dns-server     ?             
-
-​         #lease  1                              租期
-
-​         全局下排除不想分配的地址：
-
-​         #ip dhcp excluded_address     ?
+```txt
+#ip dhcp pool name
+#network 192.168.1.0   /24
+#default-router  ?                   网关
+#dns-server     ?             
+#lease  1                            租期
+#ip dhcp excluded_address     ?      全局下排除不想分配的地址：
+```
 
 远程登录telnet  (vty)
 

@@ -8,6 +8,7 @@ date: 2016-01-07 16:26:20
 permalink: vSphere-6-password-issue
 ---
 <!--more-->
+
 主机Windows 10 Pro, 装虚拟机VMware WorkStation 12.
 
 在VM 12上首先装ESXi 6.0, 然后导入vCenter Host Gateway 6.0.
@@ -17,7 +18,8 @@ permalink: vSphere-6-password-issue
 密码输入错误5次账户还被锁定了. 
 
 于是进入grub设置参数修改root密码.
-```
+
+```txt
 1. 开机出现GRUB提示时, 按上下箭头禁止自动引导;
 2. 选中正常启动项 按e进入编辑;
 3. 按上下箭头滚动到第二行显示内核引导参数, 按e编辑引导命令;
@@ -26,4 +28,5 @@ permalink: vSphere-6-password-issue
 6. passwd root重置密码
 7. reboot重启机器
 ```
+
 后来查阅资料得知, 自vCSA 5.5U1开始, 本地密码90天强制过期.
