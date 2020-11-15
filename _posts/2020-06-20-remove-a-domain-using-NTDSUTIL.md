@@ -32,12 +32,11 @@ With NTDSUTIL all of the commands can be abbreviated as long as they are unique,
 
 First of all Connect to the Domain Naming Master
 
+```txt
 Connect using NTDSUTIL
 
 1. Start up NTDSUTIL from a command prompt
-
 Go into the Metadata Cleanup (M C for short)
-
 2. Metadata Cleanup
 
 Go into connections
@@ -47,11 +46,12 @@ Go into connections
 Connect to the Domain Naming FSMO holder for your forest
 
 4. Connect to <Server> 
+```
 
 ![remove_domain_1](/assets/img/blog/AD/Remove_Domain_1.png)
    
 First of all remove any Domain Controllers from the Domain you wish to remove.
-
+```txt
 Quit Connections (Q)
 
 1. Quit
@@ -71,22 +71,23 @@ Connect to Domain you wish to remove
 List the Sites in your Forest and Select the Site which contains the first (or only) domain controller you wish to remove
 
 5. Select Site <number> 
-
+```
 
 ![remove_domain_2](/assets/img/blog/AD/Remove_Domain_2.png)
 
 List Domain Controllers in the site you connected to above
-
+```txt
 1. List Servers in Site
 
 Select Domain Controller you want to remove
 
 2. Select Server <number> 
+```
 
 ![remove_domain_3](/assets/img/blog/AD/Remove_Domain_3.png)
 
 You are ready to remove the Domain Controllers
-
+```txt
 1. Quit
 
 Remove the Domain Controller
@@ -94,14 +95,19 @@ Remove the Domain Controller
 2. Remove Selected Server
 
 3. Select Yes on the pop up window 
+```
 
 ![remove_domain_4](/assets/img/blog/AD/Remove_Domain_4.png)
 
+```txt
 4. Select Yes on the pop up windows 
+```
 
 ![remove_domain_5](/assets/img/blog/AD/Remove_Domain_5.png)
 
+```txt
 5. You will get back a message saying the Domain Controller has been removed. 
+```
 
 ![remove_domain_6](/assets/img/blog/AD/Remove_Domain_6.png)
 
@@ -109,6 +115,7 @@ Then you need to remove the naming contexts for the Domain you wish to remove.
 
 Move back to the objects you can select to select the Naming Context you want to remove
 
+```txt
 1. S O T
 
 List the naming contexts for your Forest
@@ -118,27 +125,31 @@ List the naming contexts for your Forest
 Select the Naming Context you wish to remove
 
 3. Select Naming Context <number> 
+```
 
 ![remove_domain_7](/assets/img/blog/AD/Remove_Domain_7.png)
 
 Then quit back to remove the Naming Context
-
+```txt
 1. Quit
 
 2. Remove Selected Naming Context
 
 3. Select yes to remove the naming Context 
+```
 
 ![remove_domain_8](/assets/img/blog/AD/Remove_Domain_8.png)
 
+```txt
 4. You will get back a message saying the Naming Context has been removed. 
+```
 
 ![remove_domain_9](/assets/img/blog/AD/Remove_Domain_9.png)
 Repeat the above steps for all Domain Controllers and Naming Contexts for the Domain you wish to remove.
 
 Next you need to remove the Domain itself !!PLEASE TAKE NOTE OF THE MESSAGE !!!
-
+```txt
 1. Remove Selected Domain 
-
+```
 ![remove_domain_10](/assets/img/blog/AD/Remove_Domain_10.png)
 And thats it .. should be all gone.. 

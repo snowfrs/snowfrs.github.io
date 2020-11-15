@@ -6,7 +6,9 @@ tags: Windows SID
 
 管理员权限打开命令行
 
+```txt
 cd C:\Windows\system32\Sysprep\
+```
 
 执行sysprep
 
