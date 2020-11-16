@@ -7,7 +7,7 @@ tags: Web PHP-FPM
 # 介绍
 PHP-FPM 用于解析 PHP 并通过 Nginx 向 Web 提供 fastcgi.
 # Installation
-一般选择 ![Remi][remi]提供的repo
+一般选择 [Remi][remi]提供的repo
 切换php安装源
 ```bash
 dnf module list php 

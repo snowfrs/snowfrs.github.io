@@ -54,6 +54,65 @@ git fetch
 # 同步所有remote仓库到本地
 git fetch --all
 ```
+## 同步原始远程仓库 (sync a fork)
+### 设置
+```bash
+$ git remote -v
+# list the current remotes
+origin https://github.com/user/repo.git (fetch)
+origin https://github.com/user/repo.git (push)
+
+$ git remote add upstream https://github.com/otheruser/repo.git
+# set a new remote
+
+$ git remote -v
+# verify new remote
+origin https://github.com/user/repo.git (fetch)
+origin https://github.com/user/repo.git (push)
+upstream https://github.com/otheruser/repo.git (fetch)
+upstream https://github.com/otheruser/repo.git (push)
+```
+### 同步
+同步需要两步 **fetching** **merging**
+
+**fetching**
+```bash
+$ git fetch upstream
+# grab the upstream remote's branches
+remote: Counting objects: 75, done.
+remote: Compressing objects: 100% (53/53), done.
+remote: Total 62 (delta 27), reused 44 (delta 9)
+Unpacking objects: 100% (62/62), done.
+From https://github.com/otheruser/repo
+ * [new branch]      master     -> upstream/master
+```
+目前在本地仓库已经存在 upstream/master 分支
+```bash
+$ git branch -va
+# List all local and remote-tracking branches
+* master                  a422352 My local commit
+  remotes/origin/HEAD     -> origin/master
+  remotes/origin/master   a422352 My local commit
+  remotes/upstream/master 5fdff0f Some upstream commit
+```
+
+**merging**
+既然本地仓库已经fetch上游仓库, 我们需要将更新的内容merge到本地仓库分支
+```bash
+$ git checkout master
+# check out our local master branch
+Switched to branch 'master'
+
+$ git merge upstream/master
+# Merge upstream's master into our own
+Updating a422352..5fdff0f
+Fast-forward
+ README                    |    9 -------
+ README.md                 |    7 ++++++
+ 2 files changed, 7 insertions(+), 9 deletions(-)
+ delete mode 100644 README
+ create mode 100644 README.md
+```
 
 ## 多个远程仓库
 
