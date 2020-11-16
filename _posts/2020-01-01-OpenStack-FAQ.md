@@ -3,7 +3,7 @@ title: OpenStack FAQ
 tags: OpenStack
 ---
 
-[OpenStack][OpenStack]
+[OpenStack][openstack]
 <!--more-->
 
 + OpenStack是什么？
@@ -221,4 +221,4 @@ OpenStack is a cloud operating system that controls large pools of compute, stor
 
 
 
-[OpenStack]: www.openstack.org
+[openstack]: www.openstack.org
