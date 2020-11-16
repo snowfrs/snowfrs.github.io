@@ -221,4 +221,4 @@ OpenStack is a cloud operating system that controls large pools of compute, stor
 
 
 
-[openstack]: www.openstack.org
+[openstack]: https://www.openstack.org
