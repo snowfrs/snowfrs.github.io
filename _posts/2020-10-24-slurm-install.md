@@ -302,11 +302,41 @@ scontrol show jobs
 sbatch -n16 script-file
 ```
 
+EXAMPLES
+```txt
+-> sacctmgr create cluster tux
+
+-> sacctmgr create account name=apollo description='Apollo Project' organization=trustnetic
+
+-> sacctmgr add user name=ithelpdesk adminlevel=admin account=apollo
+
+-> sacctmgr show account -s
+
+-> sacctmgr show user -s
+```
+## System information
+- sinfo - view information about Slurm nodes and partitions
+  sinfo -N -l
+- squeue  - view information about jobs located in the Slurm scheduling queue
+- scancel Used to singal jobs or job steps
+- smap - graphically view information about Slurm jobs, partitions, and set configurations parameters
+- sview - graphical user interface to view and modify Slurm state (requires gtk2)
+- scontrol - view and modify Slurm configuration and state
+- sstat
+- sprio
+
+```
+
 相关链接:
 
 - https://wiki.fysik.dtu.dk/niflheim/Slurm_installation
 
+- https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/
+
+- https://www.brightcomputing.com/blog/bid/174099/slurm-101-basic-slurm-usage-for-linux-clusters
+
 - https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html
+
 -  http://www.top500.org/  (Top500 supercomputers)
 
 [389ds]: https://www.port389.org/
