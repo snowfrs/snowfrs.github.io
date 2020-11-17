@@ -11,7 +11,7 @@ tags: performance
 ![Linux_observability_tool](/assets/img/blog/linux_performance/Linux_observability_tools.png)
 
 1. uptime
-2. dmesg | tail
+2. `dmesg | tail`
 3. vmstat 1
 4. mpstat -P ALL 1
 5. pidstat 1
