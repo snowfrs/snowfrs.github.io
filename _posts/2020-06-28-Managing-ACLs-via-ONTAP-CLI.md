@@ -15,7 +15,7 @@ parisi     true
 ```
 When using this option, the Windows clients will show a security tab entry that approximates the UNIX mode bits into ACLs. It will show the owner, group and “other” permissions. It will also attempt to convert the UNIX UID into a Windows-friendly SID so the client can display it. The Windows user will look like this:
 
-![Unix-windows-acl1](assets/img/blog/ontap/Unix-windows-acl1.png)
+![Unix-windows-acl1](/assets/img/blog/ontap/Unix-windows-acl1.png)
 
 That user is a “fake SID” that is tied to the cluster’s Storage Virtual Machine. It translates to a SID that ONTAP creates based on the numeric ID of the user or group. The Windows client uses that SID to translate into a name.
 
@@ -42,7 +42,7 @@ cluster::*> diag secd authentication translate -node node1 -vserver SVM -unix-gr
 
 From Windows, we can see the level of access for the users from the “Change Permissions” window:
 
-![Unix-windows-acl2](assets/img/blog/ontap/Unix-windows-acl2.png)
+![Unix-windows-acl2](/assets/img/blog/ontap/Unix-windows-acl2.png)
 
 On the NFS side, mode bits have no clue how to translate NTFS permission concepts like extended attributes. Instead, the clients only know Read, Write, Execute, Traverse, etc. It’s possible to show an approximation of those mode bits in UNIX for NTFS security style volumes with this option:
 
@@ -54,7 +54,7 @@ parisi     disabled
 ```
 When that option is disabled, NTFS ACLs show up as closely to UNIX permissions as they can. In the following example, I have an NTFS security style folder that allowed only the owner to have full control, but allows read to “Everyone.” With the option mentioned, we see that reflected as “755” in permissions:
 
-![Unix-windows-acl3](assets/img/blog/ontap/Unix-windows-acl3.png)
+![Unix-windows-acl3](/assets/img/blog/ontap/Unix-windows-acl3.png)
 
 ```bash
 drwxr-xr-x 3 user1 homedirs 4096 Nov 8 14:15 user1

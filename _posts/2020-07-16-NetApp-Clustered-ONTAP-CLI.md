@@ -79,7 +79,7 @@ To look at the logs within clustered ontap you must log in as the diag user to a
 set -privilege advanced
 
 systemshell -node <node_name>
-```
+
 username: diag
 
 password: `<your diag password>`
@@ -89,6 +89,7 @@ cd /mroot/etc/mlog
 cat command-history.log | grep volume (searches the command-history.log file for the keyword volume)
 
 exit (exits out of diag mode)
+```
 
 http://<cluster-ip address>/spi (loging with your username and password, from here you can browse logs and core dumps)
 
