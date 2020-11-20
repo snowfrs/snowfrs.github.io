@@ -7,11 +7,13 @@ tags: slurm
 
 # 准备工作
 ## 系统架构
-- Slurm Master Head(slurmctld): test-slurm-master
-- Slurm Compute Node(slurmd): 
+- Slurm Master Head (**`slurmctld`**): 
+  - test-slurm-master
+- Slurm Compute Node (**`slurmd`**): 
   - test-slurm-node1 
   - test-slurm-node2
-- Slurm DataBase Daemon(slurmdbd)
+- Slurm DataBase Daemon (**`slurmdbd`**)
+  
 ## 基本系统配置
 ```bash
  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
@@ -32,7 +34,7 @@ ntpstat
 chronyc sources
 ```
 ## 配置LDAP
-Slurm Cluster 中所有服务需要保持uid和gid一致.
+Slurm Cluster 中所有服务需要保持 `uid` 和 `gid` 一致.
 方法有两种：
 
 1. Cluster中所有服务器创建本地user/group 保持uid和gid一致
@@ -313,21 +315,69 @@ EXAMPLES
 -> sacctmgr show account -s
 
 -> sacctmgr show user -s
+
+-> scontrol show job jobid (display all of a job's characteristics)
+
+-> scontrol -d show job jobid (display all of a job's characteristics, including the batch script)
+
+-> scontrol update JobID=jobid Account=science (change the job's account to the science account)
+
+-> scontrol update JobID=jobid Partition=apollo (change the job's queue to the apollo queue)
+
+-> scontrol hold jobid
+
+-> scontrol release jobid
+
+-> scancel jobid
+
+-> scancel -s signal jobid
+
+-> sacct -j jobid --long
+
+-> sacct -j jobid -o JobID,JobName,AllocCPUS
+
+-> sshare
+-> sacctmgr show user user_name WIthAssoc
 ```
-## System information
-- sinfo - view information about Slurm nodes and partitions
+# Slurm Commands
+- **`sacct`**: display accounting data for all jobs and job steps in the Slurm database
+- **`sacctmgr`**: display and modify Slurm account information
+- **`salloc`**: request an interactive job allocation
+- **`sattach`**: attach to a running job step
+- **`sbatch`**: submit a batch script to Slrum
+- **`scancel`**: cancel a job or job step or signal a running job or job step
+- **`scontrol`**: display (and modify when permitted) the status of Slurm entities.  Entities include:  jobs, job steps, nodes, partitions, reservations, etc.
+- **`sdiag`**: display scheduling statistics and timing parameters
+- **`sinfo`**: display node partition (queue) summary information
+- **`sprio`**: display the factors that comprise a job's scheduling priority
+- **`squeue`**: display the jobs in the scheduling queues, one job per line
+- **`sreport`**: generate canned reports from job accounting data and machine utilization statistics
+- **`srun`**: launch one or more tasks of an application across requested resources
+- **`sshare`**: display the shares and usage for each charge account and user
+- **`sstat`**: display process statistics of a running job step
+- **`sview`**: a graphical tool for displaying jobs, partitions, reservations, and Blue Gene blocks
+- **`smap`**: graphically view information about Slurm jobs, partitions, and set configurations parameters
+- **`sstat`**
+
   sinfo -N -l
-- squeue  - view information about jobs located in the Slurm scheduling queue
-- scancel Used to singal jobs or job steps
-- smap - graphically view information about Slurm jobs, partitions, and set configurations parameters
-- sview - graphical user interface to view and modify Slurm state (requires gtk2)
-- scontrol - view and modify Slurm configuration and state
-- sstat
-- sprio
 
-```
+# Job States
+The basic job states are these:
++ **`Pending`** - the job is in the queue, waiting to be scheduled
++ **`Held`** - the job was submitted, but was put in the held state(ineligible to run)
++ **`Running`** - the job has been granted an allocation. If it's a batch job, the batch script has bee run
++ **`Complete`** - the job has completed successfully
++ **`Timeout`** - the job was terminated for running longer than its wall clock limit
++ **`Preempted`** - the running job was terminated to reassign its resources to a higher QoS job
++ **`Failed`** - the job terminated with a non-zero status
++ **`Node Fail`** - the job terminated after a compute node reported a problem
 
-相关链接:
+For the complete list, see the "JOB STATE CODES" section under the [`squeue man page`](https://slurm.schedmd.com/squeue.html).
+
+
+# 相关链接:
+
+- https://hpc.llnl.gov/banks-jobs/running-jobs/slurm-user-manual
 
 - https://wiki.fysik.dtu.dk/niflheim/Slurm_installation
 
