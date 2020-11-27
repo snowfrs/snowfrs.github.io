@@ -37,7 +37,7 @@ git remote add bar bar.git
 git remote set-url origin new.xxx.git
 ```
 
-> 更多命令请查询`git remote --help`
+> 更多命令请查询 `git remote --help`
 
 ## 同步远程仓库
 
@@ -73,9 +73,9 @@ upstream https://github.com/otheruser/repo.git (fetch)
 upstream https://github.com/otheruser/repo.git (push)
 ```
 ### 同步
-同步需要两步 **fetching** **merging**
+同步需要两步 **`fetch`** 和 **`merge`**
 
-**fetching**
+**`fetch`**
 ```bash
 $ git fetch upstream
 # grab the upstream remote's branches
@@ -96,7 +96,8 @@ $ git branch -va
   remotes/upstream/master 5fdff0f Some upstream commit
 ```
 
-**merging**
+**`merge`**
+
 既然本地仓库已经fetch上游仓库, 我们需要将更新的内容merge到本地仓库分支
 ```bash
 $ git checkout master
@@ -113,6 +114,10 @@ Fast-forward
  delete mode 100644 README
  create mode 100644 README.md
 ```
+
+> 尽量使用rebase 而不是merge
+> rebase 保持主线干净
+> merge  会保留所有commit历史
 
 ## 多个远程仓库
 

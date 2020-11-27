@@ -338,6 +338,11 @@ EXAMPLES
 
 -> sshare
 -> sacctmgr show user user_name WIthAssoc
+
+-> scontrol reconfigure
+Reconfiguration of slurm.conf and distribute to all compute and login nodes. 
+**make the daemons reread on master node**
+
 ```
 # Slurm Commands
 - **`sacct`**: display accounting data for all jobs and job steps in the Slurm database
