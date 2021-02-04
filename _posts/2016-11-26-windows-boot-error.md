@@ -5,7 +5,7 @@ tags:
   - Windows
 ---
 <!--more-->
-Win10/UEFI 引导启动时, EFI 信息存放在 `EFI\Microsoft\Boot`
+`Win10/UEFI` 引导启动时, EFI 信息存放在 `EFI\Microsoft\Boot`
 1. 使用win10系统安装盘进入
 2. 选择 **Repair your computer** 而不是 **Install now** 然后选择 **Troubleshoot>Advanced  Options>Startup Repair** 按照提示选择你要修复的OS
 3. 如果上一步不能修复 则进入命令行模式 **Troubleshoot>Advanced Options> Command Prompt**
@@ -31,12 +31,19 @@ BCDBOOT C:\Windows /l en-us /s F: /f ALL
 bcdedit /store F:\EFI\Microsoft\Boot\BCD /enum
 ```
 
++ bcdboot 用于修复efi文件 
+  
+  比如 `bcdboot C:\Windows /l en-us`将同时修复 `(EFI_Partition)\EFI\Boot\bootx64.efi` 和 `(EFI_Partition)\EFI\Microsoft\Boot\bootmgfw.efi` 这两个文件
++ bootrec 用于重新创建BCD文件 实例如上 
++ bcdedit 用于编辑BCD文件
+
 https://answers.microsoft.com/en-us/windows/forum/all/restoring-windows-efi-files-without-wiping-linux/a2e46763-dac0-4541-bbc8-af0085cb67a9
 
 如果你需要修改BCD信息
 https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/boot-error-status-not-found#add-the-osdevice-variable
 
-以下方法适合win7/MBR方式
+
+以下方法适合`Win7/MBR`方式
 1. Find a Windows System installation disk, start it when you power on your PC;
 2. Choose repair computer, then use command line
 ```
