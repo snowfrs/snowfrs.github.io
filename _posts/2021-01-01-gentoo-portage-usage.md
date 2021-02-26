@@ -14,7 +14,7 @@ https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet
 # 常用软件
 1. 系统常用工具
 ```
-emerge -a htop atop iotop lsof dstat bind-tools sudo curl wget rsync zsync git python nfs-utils cifs-utils colordiff meld neofetch tmux pcmanfm xfce4-terminal remmina aria2 mlocate pciutils zram-init xrandr
+emerge -a htop atop iotop lsof dstat bind-tools sudo curl wget rsync zsync git python nfs-utils cifs-utils colordiff meld neofetch tmux pcmanfm xfce4-terminal remmina aria2 mlocate pciutils usbutils zram-init xrandr
 ```
 2. 编辑器
 ```
@@ -112,22 +112,31 @@ layman -S #(using layman)
 2. 列出包
 
     `qlist` 命令由 `app-portage/portage-utils` 提供
+
 + 列出所有已安装的包 带版本号 带使用的overlay
 
     `qlist -IRv`
+
 + 使用`eix`列出`@world`集包含的包(带版本号)
 
     `eix --world | less`
 
     `eix --color -c --world | less -R`
+
++ 列出一个category下的所有包 (sys-kernel为例)
+    
+    `eix -C sys-kernel`
+
 3. 包安装
 以`www-client/firefox`为例
 + 列出将要安装的包但不安装(预安装)
 
     `emerge -pv www-client/firefox`
+
 + 安装指定版本的包
 
     `emerge =www-client/firefox-84.0.2`
+
 + 安装包但不添加到world文件(一次安装)
 
     `emerge --oneshot www-client/firefox` (或者)
@@ -137,9 +146,11 @@ layman -S #(using layman)
 + 首先将包从`world`集去掉
 
     `emerge --deselect www-client/firefox`
+
 + 接着预卸载
 
     `emerge --depclean -vp`
+
 + 确认无误后
 
     `emerge --depclean -v` (或者)
@@ -157,6 +168,7 @@ layman -S #(using layman)
 + 检查并修复缺失的libraries (一般情况下不需要)
     
     `revdep-rebuild -v`
+    
 + 使用`equery`查询已安装的包中哪个包提供了指定的命令
 ```
     equery b `which vim` 
